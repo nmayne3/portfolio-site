@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+This is my portfolio website created to show off my projects and front-end development skills. It was created using next.js, node.js, React, alongside framer motion for animations.
+
 ## Getting Started
 
 First, run the development server:

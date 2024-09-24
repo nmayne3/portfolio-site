@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald, Playfair_Display } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "../components/navbar";
+import Home from "./page";
+import AboutPage from "./about/page";
+import PortfolioPage from "./portfolio/page";
+import ContactPage from "./contact/page";
 
 const inter = Inter({ subsets: ["latin"] });
+const oswald = Oswald({ subsets: ["latin"] });
+const playfair = Playfair_Display({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,12 +24,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="w-full h-screen">
-          <div className="h-16">
+      <body className={`${oswald.className} page-wrapper`}>
+        <div className="w-full min-h-screen bg-primary p-[20px]">
+          <header className="h-16">
             <Navbar />
+          </header>
+          <div className="max-w-screen-xl xl:max-w-screen-2xl m-auto">
+            <Home className="" />
+            <AboutPage />
+            <PortfolioPage />
+            <ContactPage />
           </div>
-          <div className="h-[calc(100vh - 6rem)]">{children}</div>
         </div>
       </body>
     </html>

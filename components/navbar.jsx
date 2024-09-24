@@ -5,13 +5,20 @@ import GithubLogo from "../assets/iconmonstr-github-1.jsx";
 import LinkedInLogo from "../assets/LinkedInLogo.jsx";
 import Link from "next/link";
 import { useState } from "react";
+import { Bebas_Neue } from "next/font/google";
 
 const links = [
   { url: "/", title: "Home" },
-  { url: "/about", title: "About" },
-  { url: "/portfolio", title: "Portfolio" },
-  { url: "/contact", title: "Contact" },
+  { url: "#about", title: "About" },
+  { url: "#portfolio", title: "Portfolio" },
+  { url: "#contact", title: "Contact" },
 ];
+
+const bebas = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+});
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,22 +27,23 @@ const Navbar = () => {
     <div className="h-full font-medium">
       <div className="h-full w-auto mx-auto max-w-screen-2xl flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-36">
         {/* Home Button / Logo */}
-        <div className="font-semibold ">
+        <div className={bebas.className}>
           <Link
             href={"/"}
-            className="text-2xl bg-secondary text-primary rounded-md p-1 flex items-center justify-center"
+            className="text-2xl flex items-center justify-center"
           >
-            <span className="px-1"> nat </span>
-            <span className="pl-0.5 pr-1 bg-primary text-accent rounded-md">
+            <span className=""> Mayne </span>
+            {/*<span className="pl-0.5 pr-1 bg-primary text-accent rounded-md">
               {" "}
               .dev
             </span>
+            */}
           </Link>
         </div>
         {/* Website Directory */}
         <div className="hidden md:flex flex-row items-center justify-center gap-8">
           {links.map((link) => (
-            <Link
+            <a
               href={link.url}
               key={link.title}
               className={`${
@@ -44,20 +52,20 @@ const Navbar = () => {
               } hover:text-accent hover:scale-105`}
             >
               {link.title}
-            </Link>
+            </a>
           ))}
         </div>
         {/* Links to Socials */}
         <div className="hidden md:flex flex-row items-center justify-center gap-8">
           <Link
             href={"https://github.com/nmayne3"}
-            className="*:fill-secondary *:hover:fill-accent"
+            className="*:fill-accent *:hover:fill-secondary"
           >
             <GithubLogo />
           </Link>
           <Link
             href={"https://www.linkedin.com/in/nmayne3/"}
-            className="*:fill-secondary *:hover:fill-accent"
+            className="*:fill-accent *:hover:fill-secondary"
           >
             <LinkedInLogo className="group" />
           </Link>

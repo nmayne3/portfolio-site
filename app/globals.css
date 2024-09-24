@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 75,56,50;
-  --background-start-rgb: 255,244,230;
-  --background-end-rgb: 255,244,230;
+  --foreground-rgb: @apply bg-secondary;
+  --background-start-rgb: @apply bg-primary;
+  --background-end-rgb: @apply bg-primary;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,18 +16,62 @@
   }
 }
 
+body:before {
+  top: 0;
+  z-index: 900;
+}
+
+body:before,
+body:after {
+  content: "";
+  position: fixed;
+  @apply bg-border;
+  left: 0;
+  right: 0;
+  height: 25px;
+}
+
+body:after {
+  bottom: 0;
+  @apply bg-border;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom, 
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-accent;
+  @apply bg-primary;
+  border-left: 25px solid;
+  border-right: 25px solid;
+  @apply border-border;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+p {
+  font-size: 1.25rem /* 30px */;
+  line-height: 2rem /* 36px */;
+  padding-top: 1.25rem;
+}
+
+.stripes {
+  background-size: 10px 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    theme(colors.trimary) 5px,
+    theme(colors.trimary) 6px
+  );
+  height: 600%;
 }

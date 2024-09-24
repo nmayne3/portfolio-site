@@ -32,7 +32,7 @@ export const keyMarkVariants = {
 };
 
 export const Typewriter = ({ text, ...rest }) => (
-  <motion.p
+  <motion.h2
     key={text}
     variants={sentenceVariants}
     initial="hidden"
@@ -50,7 +50,7 @@ export const Typewriter = ({ text, ...rest }) => (
       </motion.span>
     ))}
     <motion.span
-      className="font-normal pl-0"
+      className="font-normal"
       variants={keyMarkVariants}
       transition={{
         ease: "easeInOut",
@@ -63,5 +63,5 @@ export const Typewriter = ({ text, ...rest }) => (
     >
       |
     </motion.span>
-  </motion.p>
+  </motion.h2>
 );
