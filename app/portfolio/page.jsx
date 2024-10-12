@@ -6,8 +6,10 @@ import GithubLogo from "@/assets/iconmonstr-github-1";
 import CPPLogo from "../../assets/c-plusplus-16-svgrepo-com";
 import UELogo from "../../assets/unreal-engine-svgrepo-com";
 import EepImage from "../../assets/Eep example shot.webp";
+import EekExample from "@/assets/EekExample.png";
 import { randomInt } from "crypto";
 import { motion } from "framer-motion";
+import GamecartdImage from "@/assets/Gamecartd.png";
 
 const PortfolioPage = () => {
   {
@@ -26,7 +28,8 @@ const PortfolioPage = () => {
             "Single-Player FPS Roguelike developed in Unreal Engine. As players fight their way through a haunted house in search of a way out, they will have to collect weapons and powerups along the way."
           }
           madeWith={[UELogo, CPPLogo]}
-          image={EepImage}
+          image={EekExample}
+          href={"https://github.com/nmayne3/CPSC-491-Project"}
         ></ProjectCard>
         <ProjectCard
           title={"GameCartd"}
@@ -34,7 +37,8 @@ const PortfolioPage = () => {
             "Social media service where users can review and track the videogames they have played. It's just letterboxd but for videogames lol"
           }
           madeWith={[CPPLogo, UELogo]}
-          image={EepImage}
+          image={GamecartdImage}
+          href={"https://github.com/nmayne3/gamecartd"}
         ></ProjectCard>
         <ProjectCard
           title={"FTP Server"}
@@ -43,6 +47,7 @@ const PortfolioPage = () => {
           }
           madeWith={[CPPLogo]}
           image={EepImage}
+          href={"https://github.com/McGabriel99/assignment-1"}
         ></ProjectCard>
       </div>
     </section>
@@ -65,7 +70,7 @@ const Button = ({ text, icon, href, ...rest }) => {
   );
 };
 
-const ProjectCard = ({ title, description, madeWith, image }) => {
+const ProjectCard = ({ title, description, madeWith, image, href }) => {
   return (
     <motion.div
       className="max-w-3xl flex flex-col md:flex-row bg-inherit rounded-none "
@@ -88,7 +93,7 @@ const ProjectCard = ({ title, description, madeWith, image }) => {
           <Button
             text={"GitHub"}
             icon={GithubLogo}
-            href={"https://github.com/nmayne3"}
+            href={href}
             className=""
           ></Button>
         </div>
