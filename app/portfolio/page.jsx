@@ -123,6 +123,7 @@ const ProjectCard = ({
         <div className="bg-secondary rounded-md">
           {image && (
             <Image
+              alt={`Example image for ${title}`}
               src={image}
               quality={1}
               placeholder="blur"
