@@ -29,7 +29,7 @@ const ContactForm = () => {
         onSubmit={handleOnSubmit}
       >
         <h2 className="text-center col-start-3 col-span-2">
-          Send me a message. Let's have a chat!
+          Send me a message. Let&apos;s have a chat!
         </h2>
         <label htmlFor="from_name" className="col-start-2 text-end">
           Name

@@ -27,13 +27,14 @@ const AboutPage = () => {
         }}
       >
         <p>
-          {`I'm a software developer and recent graduate from CSU Fullerton with a
-          B.S. in Computer Science. I have a strong proficiency in C++ and
-          Python and am well experienced in C#, Java, and Swift.\n`}
+          I&apos;m a software developer and recent graduate from CSU Fullerton
+          with a B.S. in Computer Science. I have a strong proficiency in C++
+          and Python and am well experienced in C#, Java, and Swift.
         </p>
+        <br />
         <p>
-          {`Throughout my education I built a wide portfolio of projects, and I
-          have developed a passion for creating fast, intuitive interfaces.`}
+          Throughout my education I built a wide portfolio of projects, and I
+          have developed a passion for creating fast, intuitive interfaces.
         </p>
         <p>{`In my spare time, I program games in Unreal Engine.`}</p>
         <p>
