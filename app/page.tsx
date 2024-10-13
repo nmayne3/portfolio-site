@@ -36,7 +36,7 @@ export default function Home({ className }: { className?: string }) {
           <div className={`flex flex-row place-content-between`}>
             <div className="flex flex-wrap max-w-full break-before-column flex-col md:flex-row overflow-hidden whitespace-pre-wrap text-4xl font-black uppercase">
               <motion.div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl break-normal flex-wrap text-left">
-                <Typewriter text="I'm Nathan."></Typewriter>
+                <Typewriter text={`I'm Nathan.`}></Typewriter>
               </motion.div>
             </div>
           </div>
