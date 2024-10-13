@@ -10,6 +10,11 @@ import EekExample from "@/assets/EekExample.png";
 import { randomInt } from "crypto";
 import { motion } from "framer-motion";
 import GamecartdImage from "@/assets/Gamecartd.png";
+import FTPIcon from "@/assets/ftp-svg";
+import TypescriptIcon from "@/assets/TypescriptIcon";
+import NextIcon from "@/assets/NextIcon";
+import ReactIcon from "@/assets/ReactIcon";
+import PrismaIcon from "@/assets/PrismaIcon";
 
 const PortfolioPage = () => {
   {
@@ -23,6 +28,15 @@ const PortfolioPage = () => {
       <h1 className="text-3xl pb-1 pt-6 font-black uppercase">Projects</h1>
       <div className="flex flex-col divide-y divide-solid divide-secondary">
         <ProjectCard
+          title={"GameCartd"}
+          description={
+            "Social media service where users can review and track the videogames they have played. UI/UX is modeled after Letterboxd using custom CSS classes and React front-end components."
+          }
+          madeWith={[NextIcon, ReactIcon, PrismaIcon, TypescriptIcon]}
+          image={GamecartdImage}
+          href={"https://github.com/nmayne3/gamecartd"}
+        ></ProjectCard>
+        <ProjectCard
           title={"Eep"}
           description={
             "Single-Player FPS Roguelike developed in Unreal Engine. As players fight their way through a haunted house in search of a way out, they will have to collect weapons and powerups along the way."
@@ -30,15 +44,7 @@ const PortfolioPage = () => {
           madeWith={[UELogo, CPPLogo]}
           image={EekExample}
           href={"https://github.com/nmayne3/CPSC-491-Project"}
-        ></ProjectCard>
-        <ProjectCard
-          title={"GameCartd"}
-          description={
-            "Social media service where users can review and track the videogames they have played. It's just letterboxd but for videogames lol"
-          }
-          madeWith={[CPPLogo, UELogo]}
-          image={GamecartdImage}
-          href={"https://github.com/nmayne3/gamecartd"}
+          className={"md:flex-row-reverse"}
         ></ProjectCard>
         <ProjectCard
           title={"FTP Server"}
@@ -46,9 +52,12 @@ const PortfolioPage = () => {
             "Console application from which users can upload and download files to/from a server across a network. If the server is running, users sign in and attempt a handshake to connect to the server. When inside, they can upload, download, or delete files from the server's contents using TCP protocols."
           }
           madeWith={[CPPLogo]}
-          image={EepImage}
           href={"https://github.com/McGabriel99/assignment-1"}
-        ></ProjectCard>
+        >
+          <div className="m-auto h-52">
+            <FTPIcon className="w-full h-full" />
+          </div>
+        </ProjectCard>
       </div>
     </section>
   );
@@ -70,10 +79,18 @@ const Button = ({ text, icon, href, ...rest }) => {
   );
 };
 
-const ProjectCard = ({ title, description, madeWith, image, href }) => {
+const ProjectCard = ({
+  title,
+  description,
+  madeWith,
+  image,
+  href,
+  children,
+  className,
+}) => {
   return (
     <motion.div
-      className="max-w-3xl flex flex-col md:flex-row bg-inherit rounded-none "
+      className={`max-w-3xl flex flex-col md:flex-row bg-inherit rounded-none ${className}`}
       initial={{ opacity: 0, scale: 0.9, y: "10px" }}
       whileInView={{ opacity: 1, scale: 1, y: "0px" }}
       viewport={{ once: true, amount: 0.1, margin: "-20px -20px -20px -20px" }}
@@ -100,14 +117,17 @@ const ProjectCard = ({ title, description, madeWith, image, href }) => {
       </div>
       {/** Example Image */}
       <div className=" hidden md:flex flex-shrink basis-1/2 bg-primary p-4 my-auto mx-4 place-items-center">
-        <div className="bg-secondary">
-          <Image
-            src={image}
-            quality={1}
-            placeholder="blur"
-            className="object-cover rounded-md"
-          ></Image>
+        <div className="bg-secondary rounded-md">
+          {image && (
+            <Image
+              src={image}
+              quality={1}
+              placeholder="blur"
+              className="object-cover rounded-md "
+            />
+          )}
         </div>
+        {children}
       </div>
     </motion.div>
   );
