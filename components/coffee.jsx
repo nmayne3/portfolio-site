@@ -36,9 +36,14 @@ useGLTF.preload("/Coffee.glb");
 export default function Coffee() {
   return (
     <Canvas
-      camera={{ rotation: [0, 0, 0], position: [0, 3, 5], lookAt: [0, 0, 0] }}
+      camera={{
+        rotation: [0, 0, 0],
+        position: [0, 6, 10],
+        lookAt: [0, 0, 0],
+        zoom: [0.9],
+      }}
     >
-      <Stage kenvironment={"sunset"}>
+      <Stage environment={"sunset"}>
         <Model position={[0, 0, 0]} rotation={[0, 0, 0]} />
       </Stage>
     </Canvas>

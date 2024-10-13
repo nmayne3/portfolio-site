@@ -11,7 +11,9 @@ const ContactPage = () => {
         </h1>
         <ContactForm />
       </div>
-      <Coffee />
+      <div className="p-4">
+        <Coffee />
+      </div>
       <h2 className="p-8 text-center text-2xl font-medium">
         {" "}
         Thank you for visiting my page!{" "}

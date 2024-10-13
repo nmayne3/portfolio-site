@@ -102,7 +102,10 @@ const ProjectCard = ({
           {" "}
           Made with:
           {madeWith.map((icon) => (
-            <div className="*:fill-secondary"> {icon()} </div>
+            <div className="*:fill-secondary" key={icon.name}>
+              {" "}
+              {icon()}{" "}
+            </div>
           ))}
         </div>
         <p className="text-sm font-normal normal-case p-0"> {description} </p>

@@ -31,7 +31,7 @@ const ContactForm = () => {
         <h2 className="text-center col-start-3 col-span-2">
           Send me a message. Let's have a chat!
         </h2>
-        <label for="from_name" className="col-start-2 text-end">
+        <label htmlFor="from_name" className="col-start-2 text-end">
           Name
         </label>
         <input
@@ -53,7 +53,7 @@ const ContactForm = () => {
           required
         />
 
-        <label className="text-end col-start-2" for="message">
+        <label className="text-end col-start-2" htmlFor="message">
           Message
         </label>
         <textarea
