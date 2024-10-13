@@ -42,7 +42,7 @@ export default function Home({ className }: { className?: string }) {
           </div>
           <h2 className="text-2xl px-1 py-4">
             {" "}
-            I'm a software developer in Seattle, WA.
+            I&apos;m a software developer in Seattle, WA.
           </h2>
         </div>
         <Canvas
